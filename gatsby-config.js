@@ -2,5 +2,5 @@ module.exports = {
   siteMetadata: {
     title: 'Ezeikel Pemberton - Front End Developer',
   },
-  plugins: ['gatsby-plugin-react-helmet'],
+  plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-styled-components'],
 }
