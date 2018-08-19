@@ -8,7 +8,7 @@ public_folder: /assets
 
 collections:
   - name: "post"
-    label: "Posts"
+    label: "Post"
     folder: "src/posts"
     create: true
     slug: "{{slug}}"

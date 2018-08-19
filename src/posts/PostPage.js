@@ -8,6 +8,7 @@ class PostPage extends Component {
 
     return (
       <div>
+        <img src={data.markdownRemark.frontmatter.image} />
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         <span>{data.markdownRemark.frontmatter.date}</span>
         <div 
