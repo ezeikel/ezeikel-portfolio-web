@@ -1,7 +1,7 @@
 ---
-title: 'Welcome to the new blog'
+title: Welcome to the new blog
 date: '2018-08-18'
-image: '/assets/avatar.jpg'
+thumbnail: /assets/avatar.jpg
 ---
 
 Lorem ipsum dolor amet hexagon bushwick 90's, selfies dreamcatcher food truck prism la croix viral palo santo pork belly wayfarers aesthetic VHS. Glossier wayfarers intelligentsia live-edge street art. Ethical celiac humblebrag irony, jean shorts small batch listicle VHS. Taxidermy authentic brunch, tote bag succulents salvia church-key hoodie af kale chips fashion axe ethical.
