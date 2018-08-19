@@ -3,8 +3,6 @@ backend:
   branch: master
   repo: ezeikel/ezeikel-portfolio-web
 
-publish_mode: editorial_workflow
-
 media_folder: static/assets
 public_folder: /assets
 
