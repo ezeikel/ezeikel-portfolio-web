@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: ezeikel/ezeikel-portfolio-web
 
 publish_mode: editorial_workflow
 
