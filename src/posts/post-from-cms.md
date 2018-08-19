@@ -5,6 +5,4 @@ thumbnail: /assets/avatar.jpg
 ---
 Post from CMS 
 
-
-
 ![cartoon avatar](/assets/avatar.png)
