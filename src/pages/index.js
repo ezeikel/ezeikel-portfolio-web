@@ -1,13 +1,53 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import Img from 'gatsby-image';
+import Link from 'gatsby-link';
+import PostListing from '../components/Posts/PostListing';
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <div>
-    <h1>Hey people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Img style={{
+      width: '300px',
+      height: '300px'
+    }}
+      sizes={data.avatar.sizes} 
+    />
+    {data.allMarkdownRemark.edges.map(({node}) => <PostListing key={node.id} post={node} />)}
   </div>
-)
+);
 
-export default IndexPage
+export default IndexPage;
+
+export const query = graphql `
+  query Index {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    avatar: imageSharp(id: {regex: "/avatar.jpg/"}) {
+      sizes(maxWidth: 1240) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    allMarkdownRemark(sort: {
+      fields: [frontmatter___date],
+      order: DESC
+    }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "MMMM DD YYYY")
+          }
+          fields {
+            slug
+          }
+          html
+          excerpt(pruneLength: 280)
+        }
+      }
+    }
+  }
+`;
+

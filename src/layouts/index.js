@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from "styled-components";
-import Header from '../components/header';
+import Header from '../components/Header/Header';
 import '../globalStyles';
 
 const Wrapper = styled.div `
   display: grid;
 `;
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children, data, location }) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -18,7 +18,7 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header data={data} location={location} />
     <Wrapper>
       {children()}
     </Wrapper>
@@ -29,10 +29,10 @@ Layout.propTypes = {
   children: PropTypes.func,
 }
 
-export default Layout
+export default Layout;
 
 export const query = graphql`
-  query SiteTitleQuery {
+  query SiteMeta {
     site {
       siteMetadata {
         title
