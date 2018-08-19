@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 class PostPage extends Component {
   render() {
     const { data } = this.props;
+
+    if (!data) return null; // TODO: Fixes image in post taking too long to load
+
     return (
       <div>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
