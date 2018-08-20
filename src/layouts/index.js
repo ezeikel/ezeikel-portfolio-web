@@ -9,7 +9,14 @@ const Wrapper = styled.div `
   display: grid;
 `;
 
-const Layout = ({ children, data, location }) => (
+const Intro = styled.div `
+  font-size: 51px;
+  line-height: 46px;
+  font-weight: 900;
+  font-family: 'Droid Serif';
+`;
+
+const Layout = ({ children, data }) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -18,8 +25,11 @@ const Layout = ({ children, data, location }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header data={data} location={location} />
     <Wrapper>
+      <Header data={data} />
+      <Intro>
+        Developer.
+      </Intro>
       {children()}
     </Wrapper>
   </div>

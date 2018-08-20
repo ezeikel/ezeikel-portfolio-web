@@ -1,6 +1,5 @@
 import React from 'react'
 import Img from 'gatsby-image';
-import Link from 'gatsby-link';
 import PostListing from '../components/Posts/PostListing';
 
 const IndexPage = ({ data }) => (

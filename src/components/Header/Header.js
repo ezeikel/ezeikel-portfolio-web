@@ -5,55 +5,82 @@ import styled from "styled-components";
 
 const Wrapper = styled.header`
   display: grid;
-  background-color: #1abc9c;
-  margin-bottom: 1.45rem;
-  height: ${({ isHome }) => isHome ? '70vh' : '20vh'};
-  padding: 32px;
-  font-size: 32px;
+  max-height: 60px;
+  font-size: 18px;
+  font-family: 'Roboto';
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 60px auto 1fr;
+    grid-column-gap: var(--spacing-medium);
+    align-items: center;
+    padding: 20px 20px 0 20px;
+  }
+  @media (min-width: 1024px) {
+    padding: 40px 40px 0 40px;
+  }
+`;
+
+const Navigation = styled.nav`
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+    justify-self: end;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    li {
+      margin-left: var(--spacing-large);
+    }
+  }
+  a {
+    text-decoration: none;
+    color: var(--color-black);
+    font-weight: 700;
+  }
+`;
+
+const Initial = styled(Link)`
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  text-align: center;
+  color: var(--color-white);
+`;
+
+const Name = styled(Link)`
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+    color: var(--color-black);
+    text-decoration: none;
+    font-weight: 700;
+  }
 `;
 
 class Header extends Component {
-  componentDidUpdate = (prevProps, prevState) => {
-    const { location } = this.props;
-
-    if (location.pathname !== prevProps.location.pathname) {
-      if (location.pathname === '/') {
-        this.wrapper.animate([
-          { height: '20vh'},
-          { height: '70vh'},
-        ], {
-          duration: 300,
-          fill: 'forwards',
-          easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
-          iteration: 1
-        });
-      } else if (prevProps.location.pathname === '/') {
-        this.wrapper.animate([
-          { height: '70vh'},
-          { height: '20vh'},
-        ], {
-          duration: 300,
-          fill: 'forwards',
-          easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
-          iterations: 1
-        });
-      }
-    };
-  }
-
   render() {
-    const { data, location } = this.props;
-    console.log({location});
+    const { data } = this.props;
     return (
       <Wrapper 
         isHome={location.pathname === '/'}
         ref={(wrapper) => this.wrapper = ReactDOM.findDOMNode(wrapper)}
       >
-        <Link to="/">Home</Link>
-        <Link to="/videos">Videos</Link>
-        <Link to="/talks">Talks</Link>
-        <Link to="/podcasts">Podcasts</Link>
-        <Link to="/writings">Writings</Link>
+        <Initial to="/">E</Initial>
+        <Name to="/">Ezeikel</Name>
+        <Navigation>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/videos">Videos</Link></li>
+            <li><Link to="/talks">Talks</Link></li>
+            <li><Link to="/podcasts">Podcasts</Link></li>
+            <li><Link to="/writings">Writings</Link></li>
+          </ul>
+        </Navigation>
       </Wrapper>
     );
   }
