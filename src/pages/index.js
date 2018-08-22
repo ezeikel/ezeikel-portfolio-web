@@ -1,16 +1,26 @@
 import React from 'react'
-import Img from 'gatsby-image';
-import PostListing from '../components/Posts/PostListing';
+//import Img from 'gatsby-image';
+//import PostListing from '../components/Posts/PostListing';
+import styled from "styled-components";
+
+const Intro = styled.header`
+  height: 70vh;
+  background-color: tomato;
+`;
 
 const IndexPage = ({ data }) => (
   <div>
-    <Img style={{
+    <section>
+
+    </section>
+    {/* <Img style={{
       width: '300px',
-      height: '300px'
+      height: '300px'w
+      
     }}
       sizes={data.avatar.sizes} 
-    />
-    {data.allMarkdownRemark.edges.map(({node}) => <PostListing key={node.id} post={node} />)}
+    /> */}
+    {/* {data.allMarkdownRemark.edges.map(({node}) => <PostListing key={node.id} post={node} />)} */}
   </div>
 );
 

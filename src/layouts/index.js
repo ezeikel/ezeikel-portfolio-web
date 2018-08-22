@@ -3,10 +3,16 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from "styled-components";
 import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 import '../globalStyles';
 
 const Wrapper = styled.div `
   display: grid;
+  grid-template-rows: minmax(80px, auto) minmax(auto, 1fr) 80px;
+`;
+
+const Main = styled.main`
+  min-height: calc(100vh - 120px);
 `;
 
 const Intro = styled.div `
@@ -27,10 +33,10 @@ const Layout = ({ children, data }) => (
     />
     <Wrapper>
       <Header data={data} />
-      <Intro>
-        Developer.
-      </Intro>
-      {children()}
+      <Main>
+        {children()}
+      </Main>
+      <Footer />
     </Wrapper>
   </div>
 );

@@ -6,6 +6,7 @@ export default injectGlobal`
     /*colors*/
     --color-white: #FFFFFF;
     --color-black: #333333;
+    --color-yellow: #F8DC3D;
     --color-primary: #1ABC9C;
     --color-available: #2ECC71;
     --color-unavailable: #E74C3C;

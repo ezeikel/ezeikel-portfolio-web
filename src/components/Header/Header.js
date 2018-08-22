@@ -5,18 +5,13 @@ import styled from "styled-components";
 
 const Wrapper = styled.header`
   display: grid;
-  max-height: 60px;
   font-size: 18px;
   font-family: 'Roboto';
   @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 60px auto 1fr;
+    grid-template-columns: 80px auto 1fr;
     grid-column-gap: var(--spacing-medium);
     align-items: center;
-    padding: 20px 20px 0 20px;
-  }
-  @media (min-width: 1024px) {
-    padding: 40px 40px 0 40px;
+    padding: 20px;
   }
 `;
 
@@ -43,13 +38,15 @@ const Navigation = styled.nav`
 `;
 
 const Initial = styled(Link)`
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
+  height: 100%;
+  display: grid;
+  place-items: end;
+  padding: 0 var(--spacing-tiny) var(--spacing-tiny) 0;
+  background-color: var(--color-yellow);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--color-black);
   text-decoration: none;
-  background-color: var(--color-primary);
-  text-align: center;
-  color: var(--color-white);
 `;
 
 const Name = styled(Link)`
@@ -70,8 +67,8 @@ class Header extends Component {
         isHome={location.pathname === '/'}
         ref={(wrapper) => this.wrapper = ReactDOM.findDOMNode(wrapper)}
       >
-        <Initial to="/">E</Initial>
-        <Name to="/">Ezeikel</Name>
+        <Initial to="/">EP</Initial>
+        <Name to="/">Ezeikel Pemberton</Name>
         <Navigation>
           <ul>
             <li><Link to="/">Home</Link></li>
