@@ -17,8 +17,6 @@ export default injectGlobal`
     /*font sizes*/
     --font-size-base: 18px;
     --font-size-heading-base: 16px;
-    --font-weight: 300;
-    --line-height: 25px;
 
     /*font colors*/
     --primary-text-color: var(--color-black);
@@ -43,4 +41,46 @@ export default injectGlobal`
     
   }
   ${normalize}
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--primary-font-family);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight);
+    line-height: var(--line-height);
+  }
+
+  a,
+  a:visited,
+  a:link,
+  a:active {
+    text-decoration: none;
+    color: var(--primary-text-color);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: var(--primary-font-family);
+    font-weight: var(--headings-font-weight);
+    line-height: var(--headings-line-height);
+  }
+
+  h1 { font-size: var(--h1-font-size); }
+  h2 { font-size: var(--h2-font-size); }
+  h3 { font-size: var(--h3-font-size); }
+  h4 { font-size: var(--h4-font-size); }
+  h5 { font-size: var(--h5-font-size); }
+  h6 { font-size: var(--h6-font-size); }
+
+  img {
+    max-width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 `;

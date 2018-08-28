@@ -8,7 +8,7 @@ import '../globalStyles';
 
 const Wrapper = styled.div `
   display: grid;
-  grid-template-rows: minmax(80px, auto) minmax(auto, 1fr) 80px;
+  //grid-template-rows: minmax(80px, auto) minmax(auto, 1fr) 80px;
 `;
 
 const Main = styled.main`
@@ -32,11 +32,11 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Wrapper>
-      <Header data={data} />
+      {/* <Header data={data} /> */}
       <Main>
         {children()}
       </Main>
-      <Footer />
+      {/* <Footer /> */}
     </Wrapper>
   </div>
 );

@@ -1,18 +1,22 @@
 import React from 'react'
 //import Img from 'gatsby-image';
 //import PostListing from '../components/Posts/PostListing';
-import styled from "styled-components";
+import styled from 'styled-components';
+import Intro from '../components/Intro/Intro';
+import BlogRoll from '../components/BlogRoll/BlogRoll';
 
-const Intro = styled.header`
-  height: 70vh;
-  background-color: tomato;
+const Wrapper = styled.div`
+  display: grid;
+  min-height: 100vh;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const IndexPage = ({ data }) => (
-  <div>
-    <section>
-
-    </section>
+  <Wrapper>
+    <Intro data={data.site.siteMetadata.intro} />
+    <BlogRoll posts={data.allMarkdownRemark.edges} />
     {/* <Img style={{
       width: '300px',
       height: '300px'w
@@ -21,7 +25,7 @@ const IndexPage = ({ data }) => (
       sizes={data.avatar.sizes} 
     /> */}
     {/* {data.allMarkdownRemark.edges.map(({node}) => <PostListing key={node.id} post={node} />)} */}
-  </div>
+  </Wrapper>
 );
 
 export default IndexPage;
@@ -31,6 +35,25 @@ export const query = graphql `
     site {
       siteMetadata {
         title
+        intro {
+          name
+          title
+          skills
+          paragraphs
+          experience {
+            companies {
+              name
+              role
+              url
+            }
+            projects {
+              name
+              tech
+              repoUrl
+              demoUrl
+            }
+          }
+        }
       }
     }
     avatar: imageSharp(id: {regex: "/avatar.jpg/"}) {
@@ -48,6 +71,7 @@ export const query = graphql `
           frontmatter {
             title
             date(formatString: "MMMM DD YYYY")
+            author
           }
           fields {
             slug
@@ -59,4 +83,3 @@ export const query = graphql `
     }
   }
 `;
-
