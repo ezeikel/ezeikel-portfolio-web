@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components';
+import { injectGlobal, keyframes } from 'styled-components';
 import { normalize } from './normalize';
 
 export default injectGlobal`
@@ -84,5 +84,17 @@ export default injectGlobal`
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+`;
+
+export const pointDown = keyframes`
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(70%);
+  }
+  100% {
+    transform: translateY(0%);
   }
 `;
