@@ -40,6 +40,9 @@ export const query = graphql `
           title
           skills
           paragraphs
+          availability {
+            date
+          }
           experience {
             companies {
               name

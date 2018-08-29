@@ -30,9 +30,12 @@ module.exports = {
                 'SVN'
       ],
       paragraphs: [
-        'Hi, my name is Ezeikel and I am a Fullstack Developer with a real passion for JavaScript and beautiful UI.',
-        'Currently freelancing at some dope companies, working on some challenging projects and creating some great web apps. My availability for new contracts varies but I am currently unavailable for new contracts until May 2018.'
+        'Hi, my name is Ezeikel and I am a Fullstack JavaScript Developer with a real passion for JavaScript and beautiful UI.',
+        'Currently freelancing at some dope companies, working on some challenging projects and creating some great web apps. My availability for new contracts varies but I am currently'
       ],
+      availability: {
+        date: '30/09/2018',
+      },
       experience: {
         companies: [
           {
