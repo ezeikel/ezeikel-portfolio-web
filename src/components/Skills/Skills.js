@@ -6,12 +6,17 @@ const Wrapper = styled.div `
   grid-template-columns: 150px;
   grid-template-rows: 25px;
   justify-contents: center;
+  @media (min-width: 768px) {
+    grid-template-columns: 170px;
+    grid-template-rows: 50px;
+  }
 `;
 
 const List = styled.ul`
-  display: grid;
   position: relative;
-  height: 100%;
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 const Skill = styled.li`
@@ -21,6 +26,7 @@ const Skill = styled.li`
   background-color: var(--color-primary);
   color: var(--color-white);
   width: 100%;
+  height: 100%;
 `;
 
 class Skills extends Component {
