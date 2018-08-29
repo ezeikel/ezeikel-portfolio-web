@@ -7,7 +7,11 @@ import Projects from '../Projects/Projects';
 
 const Wrapper = styled.section`
   display: grid;
+  place-items: center;
+  grid-row-gap: var(--spacing-medium);
   height: 100%;
+  padding: var(--spacing-large);
+  color: var(--color-black);
 `;
 
 const Name = styled.h1`

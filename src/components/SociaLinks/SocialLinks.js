@@ -2,16 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div `
-  display: flex;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-column-gap: var(--spacing-medium);
 `;
 
 const SocialLink = styled.a`
   text-decoration: none;
   color: var(--primary-text-color);
-  & + fa {
-    margin-left: var(--spacing-medium);
-  }
 `;
 
 const SocialLinks = () => (

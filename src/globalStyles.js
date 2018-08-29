@@ -17,6 +17,8 @@ export default injectGlobal`
     /*font sizes*/
     --font-size-base: 18px;
     --font-size-heading-base: 16px;
+    --font-weight: 300;
+    --line-height: 25px;
 
     /*font colors*/
     --primary-text-color: var(--color-black);

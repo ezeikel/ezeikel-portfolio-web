@@ -6,6 +6,10 @@ const Wrapper = styled.div `
   display: grid;
   height: 100%;
   background-color: var(--color-primary);
+  color: var(--color-white);
+  a {
+    color: var(--color-white);
+  }
 `;
 
 const BlogRoll = ({ posts }) => (
